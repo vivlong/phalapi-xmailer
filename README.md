@@ -4,7 +4,7 @@ PhalApi 2.x扩展类库，基于PHPMailer的邮件发送。
 ## 安装和配置
 修改项目下的composer.json文件，并添加：  
 ```
-    "phalapi/phpmailer":"dev-master"
+    "vivlong/phalapi-phpmailer":"dev-master"
 ```
 然后执行```composer update```，如果PHP版本过低，可使用```composer update --ignore-platform-reqs```。  
 
