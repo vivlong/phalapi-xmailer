@@ -1,5 +1,5 @@
 # PHPMailer
-PhalApi 2.x扩展类库，基于PHPMailer的邮件发送。
+PhalApi 2.x扩展类库，基于PHPMailer的邮件发送，增加自定义端口与发送附件支持。
 
 ## 安装和配置
 修改项目下的composer.json文件，并添加：  
@@ -18,6 +18,8 @@ PhalApi 2.x扩展类库，基于PHPMailer的邮件发送。
             'from' => 'XXX@gmail.com',
             'fromName' => 'PhalApi团队',
             'sign' => '<br/><br/>请不要回复此邮件，谢谢！<br/><br/>-- PhalApi团队敬上 ',
+            'SMTPSecure' => 'SSL',
+            'port' => 465,
         ),
     ),
 ```

@@ -96,11 +96,11 @@ class Lite
      * @param array/string $addresses 待发送的邮箱地址
      * @param sting        $title     标题
      * @param string       $content   内容
-     * @param bool         $isHtml    是否使用HTML格式，默认是
+     * @param string       $filePath  附件路径
      *
      * @return bool 是否成功
      */
-    public function sendWithAttachment($addresses, $title, $content, $filePath)
+    public function sendWithAttachment($addresses, $title, $content, $filePath, $isHtml = true)
     {
         $mail = new PHPMailer();
         $cfg = $this->config;
@@ -122,7 +122,7 @@ class Lite
         }
         $mail->WordWrap = 50;
         $mail->AddAttachment($filePath);
-        $mail->isHTML(true);
+        $mail->isHTML($isHtml);
         $mail->Subject = trim($title);
         $mail->Body = $content;
         if (!$mail->send()) {
