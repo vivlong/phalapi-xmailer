@@ -54,8 +54,9 @@ class Lite
      */
     public function send($addresses, $title, $content, $isHtml = true)
     {
-        $mail = new PHPMailer();
         $cfg = $this->config;
+        $mail = new PHPMailer();
+        //Server settings
         $mail->isSMTP();
         $mail->Host = $cfg['host'];
         $mail->SMTPAuth = true;
@@ -63,9 +64,9 @@ class Lite
         $mail->Port = $cfg['port'];
         $mail->Username = $cfg['username'];
         $mail->Password = $cfg['password'];
+        //Recipients
         $mail->CharSet = 'utf-8';
-        $mail->From = $cfg['username'];
-        $mail->FromName = $cfg['fromName'];
+        $mail->setFrom($cfg['username'], $cfg['fromName']);
         $addresses = is_array($addresses) ? $addresses : array($addresses);
         foreach ($addresses as $address) {
             if (!empty($address)) {
@@ -102,8 +103,9 @@ class Lite
      */
     public function sendWithAttachment($addresses, $title, $content, $filePath, $isHtml = true)
     {
-        $mail = new PHPMailer();
         $cfg = $this->config;
+        $mail = new PHPMailer();
+        //Server settings
         $mail->isSMTP();
         $mail->Host = $cfg['host'];
         $mail->SMTPAuth = true;
@@ -111,9 +113,9 @@ class Lite
         $mail->Port = $cfg['port'];
         $mail->Username = $cfg['username'];
         $mail->Password = $cfg['password'];
+        //Recipients
         $mail->CharSet = 'utf-8';
-        $mail->From = $cfg['username'];
-        $mail->FromName = $cfg['fromName'];
+        $mail->setFrom($cfg['username'], $cfg['fromName']);
         $addresses = is_array($addresses) ? $addresses : array($addresses);
         foreach ($addresses as $address) {
             if (!empty($address)) {
