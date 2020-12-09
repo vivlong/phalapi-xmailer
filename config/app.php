@@ -1,7 +1,7 @@
 <?php
 
 return array(
-    'PHPMailer' => array(
+    'XMailer' => array(
         'email' => array(
             'host' => 'smtp.gmail.com',
             'username' => 'XXX@gmail.com',

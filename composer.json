@@ -1,9 +1,9 @@
 {
-    "name": "vivlong/phalapi-phpmailer",
+    "name": "vivlong/phalapi-xmailer",
     "description": "PhalApi 2.x扩展类库，基于PHPMailer的邮件发送。",
     "type": "library",
     "keywords": [
-        "phalapi", "phalapi-phpmailer", "phpmailer"
+        "phalapi", "phalapi-xmailer", "xmailer"
     ],
     "license": "GPL-3.0+",
     "homepage": "https://www.phalapi.net/",
@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "PhalApi\\PHPMailer\\": "src"
+            "PhalApi\\XMailer\\": "src"
         }
     }
 }
