@@ -1,33 +1,11 @@
 <?php
 
-namespace PhalApi\XMailer;
+namespace PhalApi\Xmailer;
 
 use PHPMailer\PHPMailer\PHPMailer;
 
 /**
  * 邮件工具类.
- *
- * - 基于PHPMailer的邮件发送
- *
- *  配置
- *
- * 'XMailer' => array(
- *   'email' => array(
- *       'host' => 'smtp.gmail.com',
- *       'username' => 'XXX@gmail.com',
- *       'password' => '******',
- *       'from' => 'XXX@gmail.com',
- *       'fromName' => 'PhalApi团队',
- *       'sign' => '<br/><br/>请不要回复此邮件，谢谢！<br/><br/>-- PhalApi团队敬上 ',
- *   ),
- * ),
- *
- * 示例
- *
- * $mailer = new PHPMailer_Lite(true);
- * $mailer->send('chanzonghuang@gmail.com', 'Test PHPMailer Lite', 'something here ...');
- *
- * @author dogstar <chanzonghuang@gmail.com> 2015-2-14
  */
 class Lite
 {
@@ -39,7 +17,7 @@ class Lite
     {
         $di = \PhalApi\DI();
         $this->debug = $debug;
-        $this->config = $di->config->get('app.XMailer.email');
+        $this->config = $di->config->get('app.Xmailer.email');
     }
 
     /**
@@ -80,13 +58,13 @@ class Lite
         $mail->Body = $content.$cfg['sign'];
         if (!$mail->send()) {
             if ($this->debug) {
-                $di->logger->debug('Fail to send email with error: '.$mail->ErrorInfo);
+                $di->logger->info(__NAMESPACE__, __FUNCTION__, ['Fail to send email' => $mail->ErrorInfo]);
             }
 
             return false;
         }
         if ($this->debug) {
-            $di->logger->debug('Succeed to send email', ['addresses' => $addresses, 'title' => $title]);
+            $di->logger->info(__NAMESPACE__, __FUNCTION__, ['Succeed to send email' => ['addresses' => $addresses, 'title' => $title]]);
         }
 
         return true;
@@ -131,13 +109,13 @@ class Lite
         $mail->Body = $content;
         if (!$mail->send()) {
             if ($this->debug) {
-                $di->logger->debug('Fail to send email with error: '.$mail->ErrorInfo);
+                $di->logger->info(__NAMESPACE__, __FUNCTION__, ['Fail to send email' => $mail->ErrorInfo]);
             }
 
             return false;
         }
         if ($this->debug) {
-            $di->logger->debug('Succeed to send email', ['addresses' => $addresses, 'title' => $title]);
+            $di->logger->info(__NAMESPACE__, __FUNCTION__, ['Succeed to send email' => ['addresses' => $addresses, 'title' => $title]]);
         }
 
         return true;
