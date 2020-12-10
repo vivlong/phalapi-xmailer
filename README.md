@@ -1,4 +1,4 @@
-# XMailer
+# PhalApi 2.x 的PHPMailer扩展
 PhalApi 2.x扩展类库，基于PHPMailer的邮件发送，增加自定义端口与发送附件支持。
 
 ## 安装和配置
@@ -10,7 +10,7 @@ PhalApi 2.x扩展类库，基于PHPMailer的邮件发送，增加自定义端口
 
 安装成功后，添加以下配置到./config/app.php文件：  
 ```php
-    'XMailer' => array(
+    'Xmailer' => array(
         'email' => array(
             'host' => 'smtp.gmail.com',
             'username' => 'XXX@gmail.com',
@@ -28,7 +28,7 @@ PhalApi 2.x扩展类库，基于PHPMailer的邮件发送，增加自定义端口
 在./config/di.php文件中，注册邮件服务：  
 ```php
 $di->mailer = function() {
-    return new \PhalApi\XMailer\Lite(true);
+    return new \PhalApi\Xmailer\Lite(true);
 };
 ```
 
