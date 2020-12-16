@@ -28,7 +28,7 @@ PhalApi 2.x扩展类库，基于PHPMailer的邮件发送，增加自定义端口
 在./config/di.php文件中，注册邮件服务：  
 ```php
 $di->mailer = function() {
-    return new \PhalApi\Xmailer\Lite(true);
+    return new \PhalApi\Xmailer\Lite();
 };
 ```
 
