@@ -6,7 +6,7 @@
 		"phalapi", "phalapi-xmailer", "xmailer"
 	],
 	"license": "MulanPSL-2.0",
-	"minimum-stability": "dev",
+	"minimum-stability": "stable",
 	"homepage": "https://www.phalapi.net/",
 	"authors": [{
 		"name": "vivlong",
@@ -16,7 +16,7 @@
 	}],
 	"require": {
 		"php": ">=7.0.0",
-		"phpmailer/phpmailer": "~6.0"
+		"phpmailer/phpmailer": "^6.2"
 	},
 	"autoload": {
 		"psr-4": {
