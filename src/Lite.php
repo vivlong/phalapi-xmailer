@@ -13,10 +13,10 @@ class Lite
 
     protected $config;
 
-    public function __construct($config = null)
+    public function __construct($config = null, $debug = true)
     {
         $di = \PhalApi\DI();
-        $this->debug = $di->debug;
+        $this->debug = $debug || $di->debug;
         $this->config = $config;
         if (null == $this->config) {
             $this->config = $di->config->get('app.Xmailer.email');
