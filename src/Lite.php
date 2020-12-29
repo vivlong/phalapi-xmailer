@@ -13,7 +13,7 @@ class Lite
 
     protected $config;
 
-    public function __construct($debug = null, $config = null)
+    public function __construct($debug = true, $config = null)
     {
         $di = \PhalApi\DI();
         $this->debug = $debug || $di->debug;
