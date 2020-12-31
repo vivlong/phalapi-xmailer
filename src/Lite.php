@@ -61,13 +61,13 @@ class Lite
         $mail->Body = $content.$cfg['sign'];
         if (!$mail->send()) {
             if ($this->debug) {
-                $di->logger->info(__NAMESPACE__.DIRECTORY_SEPARATOR.__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['Fail to send email' => $mail->ErrorInfo]);
+                $di->logger->info(__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['Fail to send email' => $mail->ErrorInfo]);
             }
 
             return false;
         }
         if ($this->debug) {
-            $di->logger->info(__NAMESPACE__.DIRECTORY_SEPARATOR.__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['Succeed to send email' => ['addresses' => $addresses, 'title' => $title]]);
+            $di->logger->info(__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['Succeed to send email' => ['addresses' => $addresses, 'title' => $title]]);
         }
 
         return true;
@@ -112,13 +112,13 @@ class Lite
         $mail->Body = $content;
         if (!$mail->send()) {
             if ($this->debug) {
-                $di->logger->info(__NAMESPACE__.DIRECTORY_SEPARATOR.__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['Fail to send email' => $mail->ErrorInfo]);
+                $di->logger->info(__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['Fail to send email' => $mail->ErrorInfo]);
             }
 
             return false;
         }
         if ($this->debug) {
-            $di->logger->info(__NAMESPACE__.DIRECTORY_SEPARATOR.__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['Succeed to send email' => ['addresses' => $addresses, 'title' => $title]]);
+            $di->logger->info(__CLASS__.DIRECTORY_SEPARATOR.__FUNCTION__, ['Succeed to send email' => ['addresses' => $addresses, 'title' => $title]]);
         }
 
         return true;
